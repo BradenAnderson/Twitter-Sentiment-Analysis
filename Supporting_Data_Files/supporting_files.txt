@@ -1,0 +1,4 @@
+This folder contains supporting data files used during data cleaning.
+- Common contractions
+- SMS speak
+- Emoji codes
