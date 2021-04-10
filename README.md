@@ -8,7 +8,7 @@
 
 ##### [Handling Emojis](#emoji-cleaning)
 
-##### [Data Cleaning](#text-data-cleaning)
+##### [Data Cleaning with SpaCy](#text-data-cleaning)
 
 ##### [Vader Sentiment](#vaderSentiment) 
 
@@ -47,7 +47,7 @@ After all emojis were replaced by their associated sentiment string, this notebo
 
 ***
 
-##### [Data Cleaning](#text-data-cleaning)
+##### [Data Cleaning with SpaCy](#text-data-cleaning)
 
 ***
 
