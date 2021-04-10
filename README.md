@@ -39,9 +39,10 @@ The goal of this notebook is to parse through the unprocessed tweets, identify a
 The 00_Emoji_Data_Cleaning.ipynb notebook imports the emoji_partial.csv file into a pandas DataFrame and then builds a dictionary where each key is a sequence of characters that represents an emoji, and the value is the sentiment associated with that emoji. Then, using the method described in the background information, each tweet is parsed and the emojis are replaced by the associated sentiment. Extra care was taken to capture special situations such as multiple emojis existing one after another (causing their character sequences run together) using regular expressions.
 
 If, during the parsing phase, an emoji is encountered that is not one of the ~200 that I manually created a sentiment string for, then the associated emoji code is added to a separate output file “unknown_emoji.csv” and the emoji is simply removed from the tweet. The unknown_emoji.csv file is a helpful list if I ever decide to go back and create sentiment strings for additional emojis. 
-Note: The file “emoji_full_no_sentiment.csv” contains the names and Unicode code point values for over 3000 different emojis without any sentiment strings. Feel free to use this file if you ever would like to replace emojis with a custom set of sentiment strings. 
 
-After all emojis have been replaced by their associated sentiment strings, this notebook outputs a new file “train_tweets_with_emojis_clean.csv”, which will be the starting point for the next data cleaning steps. 
+Note: There is another file “emoji_full_no_sentiment.csv” that contains the names and Unicode code point values for over 3000 different emojis without any sentiment strings. Feel free to use this file if you ever have a project where you want to replace emojis with a custom set of sentiment strings. 
+
+After all emojis were replaced by their associated sentiment string, this notebook concludes by outputting a new file “train_tweets_with_emojis_clean.csv”, which will be the starting point for the next data cleaning steps. 
 
 
 ***
