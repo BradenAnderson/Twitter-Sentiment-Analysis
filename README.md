@@ -23,6 +23,7 @@
 ***
 ***
 
+<a name="handling-emojis"></a>
 ##### Handling Emojis
  
 
@@ -49,6 +50,7 @@ After all emojis were replaced by their associated sentiment string, this notebo
 ***
 
 ##### Data Cleaning with SpaCy 
+<a name="data-cleaning-with-spacy"></a>
 
 **Background**
 
