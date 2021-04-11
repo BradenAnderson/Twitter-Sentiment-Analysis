@@ -6,11 +6,11 @@
 
 ### Table of Contents
 
-##### [Handling Emojis](#Handling-Emojis)
+##### [Handling Emojis](#handling-emojis)
 
-##### [Data Cleaning with SpaCy](#Data-Cleaning-with-SpaCy)
+##### [Data Cleaning with SpaCy](#data-cleaning-with-spacy)
 
-##### [Vader Sentiment](#Vader-Sentiment) 
+##### [Vader Sentiment](#vader-sentiment) 
 
 ##### [Exploratory Data Analysis](#exploratory-data-analysis) 
 
