@@ -50,8 +50,6 @@ After all emojis were replaced by their associated sentiment string, this notebo
 
 ##### Data Cleaning with SpaCy 
 
-<"data cleaning="data-cleaning-with-spacy"></a>
-
 **Background**
 
 The goal of natural language processing is to use machine learning techniques to create models that can understand and derive insight from written human languages. Since mathematical models can only operate on numerical inputs, the first step in training such a model is to find a method of mapping portions of natural language text to numerical values. There are several different methods for how to approach this preprocessing step, many of which involve splitting each input document into word level “tokens”, where the set of all unique tokens across all training documents is referred to as the vocabulary. Using this technique, a features matrix can be constructed where each document in the training set is represented as a row, and the number of columns is equal to the number of words in the vocabulary. In the simplest possible model, each row in the feature’s matrix could simply contain a count of how many times each word in the vocabulary occurred in that particular document. 
