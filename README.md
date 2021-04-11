@@ -6,11 +6,11 @@
 
 ### Table of Contents
 
-##### [Handling Emojis](#emoji-cleaning)
+##### [Handling Emojis](emoji-cleaning)
 
-##### [Data Cleaning with SpaCy](#text-data-cleaning)
+##### [Data Cleaning with SpaCy](text-data-cleaning)
 
-##### [Vader Sentiment](#vaderSentiment) 
+##### [Vader Sentiment](vaderSentiment) 
 
 ##### [Exploratory Data Analysis](#exploratory-data-analysis) 
 
@@ -23,7 +23,7 @@
 ***
 ***
 
-##### [Handling Emojis](#emoji-cleaning)
+##### [Handling Emojis](emoji-cleaning)
 
 
 **Background Information**
@@ -48,7 +48,7 @@ After all emojis were replaced by their associated sentiment string, this notebo
 
 ***
 
-##### [Data Cleaning with SpaCy](#text-data-cleaning)
+##### [Data Cleaning with SpaCy](text-data-cleaning)
 
 **Background**
 
@@ -89,7 +89,7 @@ This notebook concludes by outputting a new file, train_tweets_spacy_clean.csv, 
 
 ***
 
-##### [Vader Sentiment](#vaderSentiment) 
+##### [Vader Sentiment](vaderSentiment) 
 
 **Background**
 
@@ -109,6 +109,7 @@ For a full description of VADER please reference the following resources:
 
 1. [VADER research paper](http://eegilbert.org/papers/icwsm14.vader.hutto.pdf) 
 2. https://github.com/cjhutto/vaderSentiment
+
    
 **02_vaderSentiment and 02_2_vaderSentiment notebook description**
 
