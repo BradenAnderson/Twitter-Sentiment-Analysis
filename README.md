@@ -48,8 +48,7 @@ After all emojis were replaced by their associated sentiment string, this notebo
 
 ***
 
-##### Data Cleaning with SpaCy 
-<a name="data-cleaning-with-spacy"></a>
+# Data Cleaning with SpaCy 
 
 **Background**
 
