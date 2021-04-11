@@ -107,8 +107,8 @@ When the VADER sentiment analyzer is applied to a text four scores are generated
 
 For a full description of VADER please reference the following resources: 
 
-    1. [VADER research paper](https://www.researchgate.net/publication/275828927_VADER_A_Parsimonious_Rule-based_Model_for_Sentiment_Analysis_of_Social_Media_Text)
-    2. https://github.com/cjhutto/vaderSentiment
+1. [VADER research paper](http://eegilbert.org/papers/icwsm14.vader.hutto.pdf) 
+2. https://github.com/cjhutto/vaderSentiment
    
 **02_vaderSentiment and 02_2_vaderSentiment notebook description**
 
