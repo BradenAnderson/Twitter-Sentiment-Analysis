@@ -6,7 +6,7 @@
 
 ### Table of Contents
 
-##### [Handling Emojis](emoji-cleaning)
+##### [Handling Emojis](#Handling-Emojis)
 
 ##### [Data Cleaning with SpaCy](text-data-cleaning)
 
@@ -23,7 +23,7 @@
 ***
 ***
 
-##### [Handling Emojis](emoji-cleaning)
+##### [Handling Emojis]
 
 
 **Background Information**
