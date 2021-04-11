@@ -23,8 +23,7 @@
 ***
 ***
 
-<a name="handling-emojis"></a>
-##### Handling Emojis
+# Handling Emojis
  
 
 **Background Information**
