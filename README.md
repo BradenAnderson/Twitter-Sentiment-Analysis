@@ -20,6 +20,8 @@
 
 ##### [Modeling with fastText word vectors in Scikit-Learn pipeline](#fastText-sklearn) 
 
+<!-- toc -->
+
 ***
 ***
 
