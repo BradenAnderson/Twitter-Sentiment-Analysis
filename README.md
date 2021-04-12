@@ -14,7 +14,7 @@
 
 [Exploratory Data Analysis](#exploratory-data-analysis) 
 
-[Modeling Part 1](#modeling-part1) 
+[Modeling Part 1](#modeling-part-1) 
 
 [Exploring fastText](#exploring-fastText) 
 
@@ -144,7 +144,7 @@ One key to understanding why VADER was ineffective at classifying hate speech is
 
 ***
 
-### [Modeling Part 1](#modeling-part1) 
+### [Modeling Part 1](#modeling-part-1) 
 
 ***
 
