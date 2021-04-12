@@ -6,11 +6,11 @@
 
 ### Table of Contents
 
-##### [Handling Emojis](#handling-emojis)
+[Handling Emojis](#handling-emojis)
 
-##### [Data Cleaning with SpaCy](#data-cleaning-with-spacy)
+[Data Cleaning with SpaCy](#data-cleaning-with-spacy)
 
-##### [Vader Sentiment](#vader-sentiment) 
+[Vader Sentiment](#vader-sentiment) 
 
 ##### [Exploratory Data Analysis](#exploratory-data-analysis) 
 
@@ -20,12 +20,11 @@
 
 ##### [Modeling with fastText word vectors in Scikit-Learn pipeline](#fastText-sklearn) 
 
-<!-- toc -->
 
 ***
 ***
 
-# Handling Emojis
+### Handling Emojis
  
 
 **Background Information**
@@ -50,7 +49,7 @@ After all emojis were replaced by their associated sentiment string, this notebo
 
 ***
 
-# Data Cleaning with SpaCy 
+#### Data Cleaning with SpaCy 
 
 **Background**
 
@@ -91,7 +90,7 @@ This notebook concludes by outputting a new file, train_tweets_spacy_clean.csv, 
 
 ***
 
-##### Vader Sentiment
+### Vader Sentiment
 
 **Background**
 
