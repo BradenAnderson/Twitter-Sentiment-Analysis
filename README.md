@@ -12,13 +12,13 @@
 
 [Vader Sentiment](#vader-sentiment) 
 
-##### [Exploratory Data Analysis](#exploratory-data-analysis) 
+[Exploratory Data Analysis](#exploratory-data-analysis) 
 
-##### [Modeling Part 1](#modeling-part1) 
+[Modeling Part 1](#modeling-part1) 
 
-##### [Exploring fastText](#fastText) 
+[Exploring fastText](#exploring-fastText) 
 
-##### [Modeling with fastText word vectors in Scikit-Learn pipeline](#fastText-sklearn) 
+[Modeling with fastText word vectors in Scikit-Learn](#modeling-with-fastText-word-vectors-in-scikit-learn) 
 
 
 ***
@@ -140,18 +140,18 @@ One key to understanding why VADER was ineffective at classifying hate speech is
 
 ***
 
-##### [Exploratory Data Analysis](#exploratory-data-analysis) 
+### [Exploratory Data Analysis](#exploratory-data-analysis) 
 
 ***
 
-##### [Modeling Part 1](#modeling-part1) 
+### [Modeling Part 1](#modeling-part1) 
 
 ***
 
-##### [Exploring fastText](#fastText)
+### [Exploring fastText](#exploring-fastText)
 
 ***
 
-##### [Modeling with fastText word vectors in Scikit-Learn pipeline](#fastText-sklearn) 
+### [Modeling with fastText word vectors in Scikit-Learn](#modeling-with-fastText-word-vectors-in-scikit-learn) 
 
 ***
