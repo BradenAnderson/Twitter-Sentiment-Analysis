@@ -142,6 +142,24 @@ One key to understanding why VADER was ineffective at classifying hate speech is
 
 ### [Exploratory Data Analysis](#exploratory-data-analysis) 
 
+When it comes to exploratory data analysis, a picture really is worth a thousand words, so please, go check it out! For those who decide not to dive into the notebook, a brief summary of the data exploration methods I used is as follows: 
+
+First, I created two separate word clouds – one using the words found in hate speech tweets, and the other using the words found in non-hate speech tweets. Words like ‘happy’, ‘love’, ‘significant’ and ‘friend’ pop out as commonly used terms in non-hate speech tweets, as for the hate speech terms... I’ll leave that for the people who open the notebook. 
+
+Next, I create a slightly different view on this same information by using bar graphs to display the frequency of the top 15 terms used in each class of tweet. I also create a slightly different spin on this same plot by isolating hashtags and again plotting the frequencies of the top 15. 
+
+Finally, in what I thought was the most insightful part of this exploration, I revisit our friend VADER and create 6 more bar graphs and 6 more word clouds. These plots displayed words from the following six categories:
+
+1.	Tweets VADER gave a positive sentiment score to, and were not hate speech
+2.	Tweets VADER gave a neutral sentiment score to, and were not hate speech
+3.	Tweets VADER gave a negative sentiment score to, and were not hate speech
+4.	Tweets VADER gave a positive sentiment score to, and were hate speech
+5.	Tweets VADER gave a neutral sentiment score to, and were hate speech
+6.	Tweets VADER gave a negative sentiment score to, and were hate speech
+
+In my opinion, the most interesting visualizations are the ones that showing words used in hate speech, yet the tweet received a positive or neutral sentiment from VADER. Inspection of these charts reveals a clear trend, specifically, that some politically and racially related terms that commonly appear in hate speech are not properly accounted for in the VADER lexicon. Armed with this knowledge, I believe we could make some custom additions to VADERs vocabulary that would significantly increase its utility as a hate speech classifier.
+
+
 ***
 
 ### [Modeling Part 1](#modeling-part-1) 
