@@ -1,0 +1,2 @@
+This folder contains all fastText related support files to run the notebooks. This includes text files to train supervised fastText models,
+text files to train unsupervised fastText models, as well as actual supervised and unsupervised trained model files.
