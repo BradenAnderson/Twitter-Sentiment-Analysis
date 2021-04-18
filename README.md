@@ -164,6 +164,120 @@ In my opinion, the most interesting visualizations are the ones that showing wor
 
 ### [Modeling Part 1](#modeling-part-1) 
 
+For this round of modeling, all inputs (features matrices) were sparse document vectors (length of each vector is the vocabulary length) created by Scikit-Learns TfidfVectorizer. Using these TFIDF weighted vectors as inputs I created and tuned several different model types to compare their relative performance. To address the significant class imbalance (where the training data has significantly more examples of non-hate speech than hate speech) I explored using the imblearn library to hyper-parameterize the use of various over sampling techniques (e.g. random oversampling, synthetic minority oversampling SMOTE, adaptive synthetic sampling ADASYN) for several of the models.
+
+I also explored using the VADER sentiment scores as additional input features to the supervised models, however I was quickly able to show that doing this did not lead to an increased performance and therefore I did not carrying the idea forward. As shown in previous sections, there is a significant portion of the hate speech terminology that is missing from VADERs vocabulary, therefore it is not surprising that the “out of the box” VADER scores lack predictive power for this task. If the VADER vocabulary was updated to include some task specific terms, it may be interesting to once again explore using the VADER scores as inputs to supervised learning models. 
+
+To maintain a sense of organization and to easily spread out the modeling work load, a separate jupyter notebook was utilized for creating and tuning each unique model type. All notebooks from this round of modeling begin with the “04” naming convention, a full list of which is as follows: 
+
+04_Multinomial_Naive_Bayes_Modeling.ipynb
+04_SGD_Modeling.ipynb
+04_Complement_Naive_Bayes_Modeling.ipynb
+04_Extra_Random_Forest.ipynb
+04_Gradient_Boosted_Forest_Models.ipynb  
+04_Logistic_Regression.ipynb
+04_MLP.ipynb
+
+Note: Most of the trained models (pickle files) for this round of modeling are available in the folder "04_trained_model_pickle_files". The few that are missing were too large to upload to GitHub. 
+
+To easily compare relevant classification metrics across model types, another notebook **04_Modeling_Analysis.ipynb** was created with the sole purpose of importing and displaying the GridSearch results created in the notebooks above. 
+
+After several rounds of model tuning, I isolated a group of five models that had the highest performance as determined by the GridSearch cross validation F1 score. These models are as follows: 
+
+1.	Naïve Bayes with minority class random over sampler (naïve_bayes_ros_gs2.pkl), cross validation f1 score = 0.73
+2.	Support vector machine with minority class random over sampler (SGD_ros_nv_gs1.pkl), cross validation f1 = 0.72
+3.	Gradient Boosted Random Forest with 1250 decision trees and minority class random over sampler (bf_ros_gs1.pkl), cross validation f1 score = 0.679
+4.	Logistic Regression with minority class random over sampler (lr_ros_gs1.pkl), cross validation f1 score = 0.73
+5.	Multilayer Perceptron with 100 hidden units (file too large to include), cross validation f1 score = 0.73 
+
+Note: The full list of hyper parameters used in each model are not reproduced here. To see this information please reference the modeling and modeling analysis notebooks. 
+
+Once I had identified my top performing models as determined by cross validation, I then tested each model using a completely unseen dataset of 17198 tweets. The results are as follows:
+
+1.	Naïve Bayes, F1 score = 0.768
+2.	Support vector machine, F1 score = 0.723
+3.	Gradient boosted random forest, F1 score = 0.699
+4.	Logistic Regression, F1 score = 0.765
+5.	Multilayer Perceptron, F1 score = 0.769
+
+Next, I wrote a python script to automate creating ensembles with all possible combinations of the above models. The ensembles were all based on the scikit-learn voting classifier with a hard voting scheme. To cover all possible combinations, the ensemble size was ranged from 2 to 5, for a total of 26 possible ensemble models. The code that automates instanting, fitting, and outputting test results for all 26 ensembles can be found in the notebook 04_Generate_Hard_Voting_Ensemble_Predictions.ipynb. 
+
+Note: Hard voting is where each classifier in the ensemble gets a single vote, and the final predicted class is a simple majority rule of the predicted classes for each ensemble member. The alternative option is soft voting, where each classifier outputs a set of probabilities for target class, and the final prediction made by the ensemble is the class with the highest overall probability. I’ll also note that, in general, for a set of well-tuned classifiers soft voting should be preferred as it lets classifiers that are more ‘certain’ on a given datapoint weigh in more heavily. However, not all model types have the ability to generate probabilistic outputs (e.g. a support vector machine with the perceptron loss function does not), therefore to be inclusive for all five model types hard voting was chosen. 
+
+The F1 scores calculated using the set of 17198 previously unseen tweets are shown below.
+
+**Size two hard voting ensemble F1 Scores:** 
+
+1.	Naïve Bayes and Logistic Regression, F1 Score = 0.768
+2.	Naïve Bayes and Support Vector Machine, F1 Score = 0.756
+3.	Naïve Bayes and Gradient Boosted Random Forest, F1 Score = 0.755
+4.	Naïve Bayes and Multilayer Perceptron, F1 Score = 0.772
+5.	Logistic Regression and Support Vector Machine, F1 Score = 0.754
+6.	Logistic Regression and Gradient Boosted Random Forest, F1 Score = 0.753
+7.	Logistic Regression and Multilayer Perceptron, F1 Score = 0.771
+8.	Support Vector Machine and Gradient Boosted Random Forest, F1 Score = 0.720
+9.	Support Vector Machine and Multilayer Perceptron, F1 Score = 0.772
+10.	Gradient Boosted Random Forest and Multilayer Perceptron = 0.745
+
+**Size three hard voting ensemble F1 Scores:**
+
+1.	Naïve Bayes, Logistic Regression, Support Vector Machine, F1 Score = 0.773
+2.	Naïve Bayes, Logistic Regression, Gradient Boosted Random Forest, F1 Score = 0.7878
+3.	Naïve Bayes, Logistic Regression, Multilayer Perceptron, F1 Score = 0.779
+4.	Naïve Bayes, Support Vector Machine, Gradient Boosted Random Forest, F1 Score = 0.772
+5.	Naïve Bayes, Support Vector Machine, Multilayer Perceptron, F1 Score = 0.780
+6.	Naïve Bayes, Multilayer Perceptron, Gradient Boosted Random Forest, F1 Score = 
+7.	Logistic Regression, Support Vector Machine, Multilayer Perceptron, F1 Score = 
+8.	Logistic Regression, Support Vector Machine, Gradient Boosted Random Forest, F1 Score = 
+9.	Logistic Regression, Multilayer Perceptron, Gradient Boosted Random Forest, F1 Score =
+10.	Support Vector Machine, Multilayer Perceptron, Gradient Boosted Random Forest, F1 Score =
+
+**Size four hard voting ensemble F1 Scores:**
+
+1.	Naïve Bayes, Support Vector Machine, Logistic Regression, Gradient Boosted Random Forest, F1 Score = 0.772
+2.	Naïve Bayes, Logistic Regression, Support Vector Machine, Multilayer Perceptron, F1 Score = 0.7675
+3.	Naïve Bayes, Logistic Regression, Gradient Boosted Random Forest, Multilayer Perceptron, F1 Score = 0.773
+4.	Naïve Bayes, Support Vector Machine, Gradient Boosted Random Forest, Multilayer Perceptron, F1 Score = 0.772
+5.	Logistic Regression, Support Vector Machine, Gradient Boosted Random Forrest, Multilayer Perceptron, F1 Score = 0.758
+
+**Size five hard voting ensemble F1 Score:**
+
+1.	Naïve Bayes, Support Vector Machine, Gradient Boosted Random Forest, Logistic Regression and Multilayer Perceptron, F1 Score = 0.7588
+
+Next, to explore the effect of probabilistic ensemble voting, the support vector machine model was removed and all possible ensemble combinations of the remaining four models were created, this time using the soft voting scheme. This process was automated similar to the hard voting ensembles, see the notebook "04_Generate_Soft_Voting_Ensemble_Predictions" for the code that does this. With four models to choose from the possible ensemble sizes are 2, 3, or 4, which leads to a total of 11 possible ensembles. 
+
+**Size two soft voting ensemble F1 Scores:**
+
+1.	Naïve Bayes and Logistic Regression, F1 Score = 0.7807
+2.	Naïve Bayes and Gradient Boosted Random Forest, F1 Score = 0.779
+3.	Naïve Bayes and Multilayer Perceptron, F1 Score = 0.776
+4.	Logistic Regression and Gradient Boosted Random Forest, F1 Score = 0.763
+5.	Logistic Regression and Multilayer Perceptron, F1 Score = 0.775
+6.	Gradient Boosted Random Forest and Multilayer Perceptron, F1 Score = 0.772
+
+**Size three soft voting ensemble F1 Scores:**
+
+1.	Naïve Bayes, Logistic Regression, Gradient Boosted Random Forest, F1 Score = 0.7934
+2.	Naïve Bayes, Logistic Regression, Multilayer Perceptron, F1 Score = 0.7732
+3.	Naïve Bayes, Gradient Boosted Random Forest, Multilayer Perceptron, F1 Score = 0.7914
+4.	Logistic Regression, Multilayer Perceptron, Gradient Boosted Random Forest, F1 Score = 0.770
+
+**Size four soft voting ensemble F1 Score:**
+
+1.	Naïve Bayes, Logistic Regression, Gradient Boosted Random Forest, Multilayer perceptron, F1 Score = 0.777
+
+In summary, the best F1 score was achieved by soft vote ensembling three models, which were Naive Bayes, Logistic Regression, and Gradient Boosted Random Forest. This ensemble achieved an F1 score of 0.7934, which at the time of this writing ranks #30 (out of 16171 registered particpants and a leader board that holds 1186 top scores) on the Analytics Vidhya Twitter Sentiment Analysis competition leader board. 
+
+At this point we have created, tuned, and ensembled various model types, all of which used the Scikit-Learn TFIDF vectorizer as the final step in preparing our twitter data for the machine learning model. I believe there are a few potential methods that could increase our predictive ability even further, these are: 
+
+1. Revisit the data cleaning decisions to see what improvements can be made. Implementing a spellchecker that is efficient and accurate on social media style text is one possible method of improvement. Another could be revisiting VADERs vocabulary to try leveraging its capabilities again.
+
+2. Try different word embedding techniques. Pretrained word vectors could potentially be useful (e.g. GloVe), or we could consider using a method of training our own application specific word vectors (e.g. fastText or word2vec). 
+
+3. Try a deep learning approach. Reccurrent neural networks can be very effective at natural language processing tasks, and these networks have the ability to utilize pretrained word embeddings (e.g. fastText vectors) or to learn their own embeddings via a network embedding layer.
+
+Several of these options will be explored in the work that follows, so if that sounds interesting, please stick around and check it out! 
+
 ***
 
 ### [Exploring fastText](#exploring-fastText)
