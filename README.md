@@ -80,7 +80,9 @@ As such, the focus of this data cleaning notebook is the creation of this minimu
 
    **Note:** Lemmatization is the process of grouping together inflected or derivationally related words to a common root form. 
    For example, a lemmatizer may perform the following word mappings:
+   
        am, are, is --> be
+       
        walk, walks, walked, walking --> walk
        
 6) Discard tokens that are too generic to provide sentiment information (e.g. stop words and generic @User twitter handles). 
