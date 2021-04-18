@@ -18,7 +18,9 @@
 
 [Exploring fastText](#exploring-fastText) 
 
-[Modeling with fastText word vectors in Scikit-Learn](#modeling-with-fastText-word-vectors-in-scikit-learn) 
+[Modeling with fastText word vectors in Scikit-Learn](#modeling-with-fastText-word-vectors-in-scikit-learn)
+
+[Deep Learning](#deep-learning) 
 
 
 ***
@@ -317,5 +319,10 @@ I concluded this initial fastText exploration by comparing the word vectors crea
 ***
 
 ### [Modeling with fastText word vectors in Scikit-Learn](#modeling-with-fastText-word-vectors-in-scikit-learn) 
+
+***
+***
+
+### [Deep Learning](#deep-learning) 
 
 ***
