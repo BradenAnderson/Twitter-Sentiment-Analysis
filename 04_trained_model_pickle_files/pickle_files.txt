@@ -1,1 +1,3 @@
 This folder contains all of the trained model (pickle) files associated with the 04 series of modeling.
+
+If you're looking for a model file in here and can't find it, I apologize! There were a few that were just too big to put on GitHub (especially the MLP ones). 
