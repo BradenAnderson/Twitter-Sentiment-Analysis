@@ -226,7 +226,7 @@ The F1 scores calculated using the set of 17198 previously unseen tweets are sho
 3.	Naïve Bayes, Logistic Regression, Multilayer Perceptron, F1 Score = 0.779
 4.	Naïve Bayes, Support Vector Machine, Gradient Boosted Random Forest, F1 Score = 0.772
 5.	Naïve Bayes, Support Vector Machine, Multilayer Perceptron, F1 Score = 0.780
-6.	Naïve Bayes, Multilayer Perceptron, Gradient Boosted Random Forest, F1 Score = 
+6.	Naïve Bayes, Multilayer Perceptron, Gradient Boosted Random Forest, F1 Score = 0.784
 7.	Logistic Regression, Support Vector Machine, Multilayer Perceptron, F1 Score = 
 8.	Logistic Regression, Support Vector Machine, Gradient Boosted Random Forest, F1 Score = 
 9.	Logistic Regression, Multilayer Perceptron, Gradient Boosted Random Forest, F1 Score =
