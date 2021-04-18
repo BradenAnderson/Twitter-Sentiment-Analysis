@@ -2,6 +2,14 @@
 
 ### Project Goal: Classify tweets for instances of hate speech. 
 
+The goal of this project is to create a machine learning pipeline that can recieve raw twitter data as inputs, and output accurate predictions regarding which tweets do and do not contain hate speech. In the context of this project, "hate speech" encompasses anything that would be considered racist or sexist. 
+
+
+At one time or another, I think most people have heard about or experienced an online platform where discussion had become hateful and offensive. When these types of enviornments are allowed to manifest and grow they tend to undermine the very purpose and goal of the platform, which is generally to increase communication and bring people together. A tool that is able to efficiently find these hateful online subcultures could certainly help social media companies moderate their platforms so that they meet their intended purpose of creating meaningful and positive connections. 
+
+
+The importance of this project, however, extends far beyond seeking to ensure online platforms are happy places to be a part of. The fact is that there are real world connections between the people who go online and engage in hateful discussions, and the people who ultimately commit hate crimes and acts of violence. This means if we are able to effectively find hate speech in social media posts, we may be able to discover individuals who present the highest risk of committing future crimes, and through targeted outreach programs engage with those individuals to hopefully prevent words from turning into actions. 
+
 ***
 
 ### Table of Contents
